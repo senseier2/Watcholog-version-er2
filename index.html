@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Twin</title>
+    <!-- install mustard UI for page styling -->
+    <link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css">
+    <!-- install needed fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Monoton&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="sidebar sidebar-left">
+
+        <a href="javascript:void(0)" class="closebtn" onclick='closeNav()'>&times;</a>
+        <h1>Movie<br>Twin</h1>
+        <form id="user-form" class="user-form-body">
+            <p><input type="text" id="datepicker" placeholder="Enter Birthdate Here"></p>
+          <input type="submit" value="submit" id="submit">
+        </form>
+
+          <div id="recent-search">
+              <p>Recent Searches</p>
+              <ul id="search-history">
+
+              </ul>
+          </div>
+
+          <button class="secondary-button" id = "help-button">
+            Help
+          </button>
+          <button class="secondary-button" id = "about-button">
+            About
+          </button>
+
+      </div>
+
+    <main>
+        <button class="openbtn" onclick='openNav(window.matchMedia("(max-width: 700px)"))'>&#9776; Open Sidebar</button>
+        <div id="upper-card" class="card upperCard">
+          <div>
+          <h3 class="card-header">Here are so some celebrities your birthday matched</h3>
+          </div>
+          <div class="card-body" id="CelebrityNames">            
+          </div>
+        </div>
+        <div id="lower-card" class="card lowerCard">
+        </div>
+    </main>
+
+    <!-- Modal code -->
+
+    <div class="modal-mask" id ="welcomeModal" style="display: none">
+        <div class="modal">
+            <div class="modal-head">
+                <p class="modal-title">Welcome to Movie Twin</p>
+            </div>
+            <div class="modal-body">
+                <p>To use Movie Twin input a birthdate to match your birthday with celebrities. Movie Twin will find your seperated at birth celebrity twin and suggest movies for you. Happy Watching!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="button-primary" id="welcomeClose">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-mask" id ="helpModal" style="display: none">
+      <div class="modal">
+          <div class="modal-head">
+              <p class="modal-title">Help</p>
+          </div>
+          <div class="modal-body">
+              <p>To use Movie Twin input a birthdate to match your birthday with celebrities. Don't worry about the year! Movie twin will still be able to find your match!</p>
+          </div>
+          <div class="modal-footer">
+              <button class="button-primary" id="helpClose">Close</button>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal-mask" id ="aboutModal" style="display: none">
+    <div class="modal">
+        <div class="modal-head">
+            <p class="modal-title">About</p>
+        </div>
+        <div class="modal-body">
+            <p>Ryan Schubert, Kaluki Musau, Eric McGhee, Nahian Bari are full-stack student at Northwestern coding bootcamp.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="button-primary" id="aboutClose">Close</button>
+        </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+
+</body>
+</html>
