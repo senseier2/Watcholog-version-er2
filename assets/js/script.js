@@ -38,3 +38,6 @@ window.onclick = function(event) {
 function keyCheck() {
     if (localStorage.getItem("isFirstTime")=== null){modal.style.display="block"}
 }
+
+keyCheck();
+
