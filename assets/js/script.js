@@ -1,5 +1,4 @@
 // globally scoped variables
-
 var modal = document.getElementById("welcomeModal");
 var helpModal = document.getElementById("helpModal");
 var aboutModal = document.getElementById("aboutModal");
@@ -20,3 +19,10 @@ var imdbKey="57df2f59f73d6513b02f8a10cd393e77"
 
 // welcome Modal close
 var span = document.getElementById("welcomeClose");
+
+//Close modal when user clicks on the span
+span.onclick = function() {
+    modal.style.display = "none";
+    localStorage.setItem("isFirstTime", false);
+}
+
