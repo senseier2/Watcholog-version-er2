@@ -59,3 +59,28 @@ aboutClose.onclick = function() {
     aboutModal.style.display = "none";
 }
 
+// function to invoke an api call using our team project key
+
+function getOnThisDay(datearray) {
+    const APIkey = "5545ff51d38bd9595e5804234560ff279eb49fe5";
+
+    let apiRequest= `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/${datearray[0]}/${datearray[1]}`
+    fetch(apirequest,)
+
+    .then(function (response) {
+        console.log(response);
+        return response.json();
+    })
+    .then(function (data) {
+        let textArray=extractText(data);
+        let thespArray = textArray.filter(isThespian)
+        let nameArray = thespArray.map(extractName)
+        clearDiv(celebList)
+        clearDiv(movieList)
+
+        for (i=0; i < celebLimit; i ++) {
+            renderCelebrityNames(nameArray[i])
+            getMovietitles(api=imdbKey, celeb=nameArray[i]);
+        }
+    })
+}
