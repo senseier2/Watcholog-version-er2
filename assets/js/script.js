@@ -39,5 +39,23 @@ function keyCheck() {
     if (localStorage.getItem("isFirstTime")=== null){modal.style.display="block"}
 }
 
+// invoke key check for the first time modal
 keyCheck();
+
+// Help and About Modal display controls for user click response
+helpButton.onclick = function() {
+    helpModal.style.display = "block";
+}
+
+helpClose.onclick = function() {
+    helpModal.style.display = "none";
+}
+
+aboutButton.onclick = function() {
+    aboutModal.style.display = "block";
+}
+
+aboutClose.onclick = function() {
+    aboutModal.style.display = "none";
+}
 
