@@ -84,3 +84,32 @@ function getOnThisDay(datearray) {
         }
     })
 }
+
+// function to invoke an api call and recieve movie titles
+
+function getMovieTitles(api,celeb) {
+    let requestURL= `https://api.themoviedb.org/3/search/person?api_key=${api}&query=${celeb}`
+
+    data = fetch(requestURL)
+        .then(function (response) {
+            if (!response.ok) {
+                return
+            }
+            return response.json()
+        })
+
+        .then(function(data) {
+            console.log(data)
+            renderMovieName(data.results[0].known_for[0].title,
+                data.results[0].known_for[0].poster_path,
+                data.results[0].known_for[0].release_date,
+                data.results[0].known_for[0].vote_average,
+                data.results[0].known_for[0].overview,
+                data.results[0].known_for[0].name,
+                data.results[0].known_for[0].first_air_date,
+                data.results[0].known_for[0].name
+                )
+
+                appendCelebImage(celeb,data)
+        })
+}
