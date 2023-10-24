@@ -162,3 +162,4 @@ function extractName(apiText) {
     let celebName=apiText.substr(0, apiText.indexOf(,));
     return celebName
 }
+
