@@ -113,3 +113,12 @@ function getMovieTitles(api,celeb) {
                 appendCelebImage(celeb,data)
         })
 }
+
+//append celeb image to main card
+
+function appendCelebImage(celeb,data) {
+    let subCard = document.querySelector("#" + celeb.replace(/\s/g, ''))
+    subCard.setAttribute("style", "margin-right:20px; padding:10px")
+    let img = document.createElement("img")
+    if (da)
+}
