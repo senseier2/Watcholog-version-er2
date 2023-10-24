@@ -120,5 +120,45 @@ function appendCelebImage(celeb,data) {
     let subCard = document.querySelector("#" + celeb.replace(/\s/g, ''))
     subCard.setAttribute("style", "margin-right:20px; padding:10px")
     let img = document.createElement("img")
-    if (da)
+    if (data.results[0].profile_path) {
+        img.setAttribute("src", `https://image.tmdb.org/t/p/original${data.results[0].profile_path}`)
+    } else {
+        img.setAttribute("src",placeholderImg)
+    }
+    img.setAttribute("style","width: 180px; margin-right:20px; box-shadow: 5px 5px 5px lightblue")
+    subCard.appendChild(img)
+}
+
+//We tried to extract the Movie title from the celebrity api call, possibly to provide the match details in the card. research completing this if possible.
+// function that extracts movie title from celebrity api call
+// function extractTitle(data) {
+//   // let title = data.results[0].description
+//   let title = "(III) (Actress, La La Land (2016))"
+//   trueTitle = title.match(/,\s(.*)\s\([0-9]*\)/i)
+//   // console.log(title)
+//   // console.log(trueTitle[1])
+// }
+// function pulls from the imdb api
+
+//Extract text data from api call
+function extractText(data) {
+    let allText = Array()
+    allText.length = data.births.length
+    for (let i = 0; i < data.births.length; i++) {
+        allText[i]=data.births[i].text
+    }
+    //console.log(allText)
+    return allText
+}
+
+//filter for actors and actresses
+function isThespian(value) {
+    thesp = value.includes("actor") | value.includes("actress")
+    return thesp
+}
+
+//extract name from record
+function extractName(apiText) {
+    let celebName=apiText.substr(0, apiText.indexOf(,));
+    return celebName
 }
