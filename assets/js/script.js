@@ -15,7 +15,7 @@ var celebLimit=5;
 placeholderImg="./assets/images/person-image.jpg"
 
 // imdb key
-var imdbKey="57df2f59f73d6513b02f8a10cd393e77"
+var imdbKey = "57df2f59f73d6513b02f8a10cd393e77"
 
 // welcome Modal close
 var span = document.getElementById("welcomeClose");
@@ -36,7 +36,7 @@ window.onclick = function(event) {
 
 // Check isFirstTime key for modal request - display welcome modal if isFirstTime is true
 function keyCheck() {
-    if (localStorage.getItem("isFirstTime")=== null){modal.style.display="block"}
+    if (localStorage.getItem("isFirstTime") === null){modal.style.display = "block"}
 }
 
 // invoke key check for the first time modal
@@ -65,14 +65,14 @@ function getOnThisDay(datearray) {
     const APIkey = "5545ff51d38bd9595e5804234560ff279eb49fe5";
 
     let apiRequest= `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/${datearray[0]}/${datearray[1]}`
-    fetch(apirequest,)
+    fetch(apiRequest,)
 
     .then(function (response) {
         console.log(response);
         return response.json();
     })
     .then(function (data) {
-        let textArray=extractText(data);
+        let textArray = extractText(data);
         let thespArray = textArray.filter(isThespian)
         let nameArray = thespArray.map(extractName)
         clearDiv(celebList)
@@ -86,9 +86,8 @@ function getOnThisDay(datearray) {
 }
 
 // function to invoke an api call and recieve movie titles
-
 function getMovieTitles(api,celeb) {
-    let requestURL= `https://api.themoviedb.org/3/search/person?api_key=${api}&query=${celeb}`
+    let requestURL = `https://api.themoviedb.org/3/search/person?api_key=${api}&query=${celeb}`
 
     data = fetch(requestURL)
         .then(function (response) {
@@ -109,13 +108,11 @@ function getMovieTitles(api,celeb) {
                 data.results[0].known_for[0].first_air_date,
                 data.results[0].known_for[0].name
                 )
-
                 appendCelebImage(celeb,data)
         })
 }
 
 //append celeb image to main card
-
 function appendCelebImage(celeb,data) {
     let subCard = document.querySelector("#" + celeb.replace(/\s/g, ''))
     subCard.setAttribute("style", "margin-right:20px; padding:10px")
@@ -145,7 +142,7 @@ function extractText(data) {
     let allText = Array()
     allText.length = data.births.length
     for (let i = 0; i < data.births.length; i++) {
-        allText[i]=data.births[i].text
+        allText[i] = data.births[i].text
     }
     //console.log(allText)
     return allText
@@ -159,7 +156,7 @@ function isThespian(value) {
 
 //extract name from record
 function extractName(apiText) {
-    let celebName=apiText.substr(0, apiText.indexOf(,));
+    let celebName = apiText.substr(0, apiText.indexOf(','));
     return celebName
 }
 
