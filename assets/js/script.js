@@ -160,3 +160,13 @@ function extractName(apiText) {
     return celebName
 }
 
+//render celebrity to celbrity div
+function renderCelebrityNames(data) {
+    let div = document.createElement("div")
+    let celebrity = document.createElement("p");
+    celebrity.textContent = data
+    div.setAttribute("id",data.replace(/\s/g, ''))
+    div.appendChild(celebrity)
+    celebList.appendChild(div);
+}
+
