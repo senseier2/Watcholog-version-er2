@@ -170,3 +170,55 @@ function renderCelebrityNames(data) {
     celebList.appendChild(div);
 }
 
+// function to render movie data to the website
+function renderMovieNames(data, data2, data3, data4, data5, data6, data7, data8) {
+    let celebBloop = document.createElement('p')
+    celebBloop.textContent = data8;
+    celebBloop.setAttribute("style", "font-weight: bold")
+
+    let movieName = document.createElement('h3');
+    movieName.textContent = data;
+
+    let movieRelease = document.createElement('p');
+    movieRelease.tectContent = data3;
+
+    let airDate = document.createElement('p');
+    airData.textContent = data7;
+
+    let posterImg = document.createElement('img');
+    if (!data2) {
+        posterImg.setAttribute("src", placeholderImg);
+    } else {
+        posterImg.setAttribute("style", "width:180px; margin-right: 20px; box-shadow: 5px 5px 5px lightblue;");
+
+        let userRating = document.createElement('p');
+        userRating.textContent = "Voter Rating: " + data4;
+        userRating.setAttribute("style", "test-align: right");
+
+        let overviewData = docuemnt.createElement('p');
+        overviewData.textContent = data5;
+
+        let infoDiv = document.createElement('div');
+
+        let titleDiv = document.createElement('div');
+
+        let tvTitle = document.createElement('h3');
+        tvTitle.textContent = data6;
+
+        let movieDiv = document.createElement('div');
+        movieDiv.setAttribute("style", "display:flex; border: solid 2px var(--lightest-blue); padding: 10px; overflow:scroll; margin-bottom:1px");
+
+        movieDiv.setAttribute("class", "movieDiv");
+        movieList.appendChild(movieDiv);
+        movieDiv.appendChild(titleDiv);
+        movieDiv.appendChild(infoDiv);
+        titleDiv.appendChild(posterImg);
+        infoDiv.appendChild(tvTitle);
+        infoDiv.appendChild(movieName);
+        infoDiv.appendChild(celebBloop);
+        infoDiv.appendChild(movieRelease);
+        infoDiv.appendChild(airDate);
+        infoDiv.appendChild(overviewData);
+        infoDiv.appendChild(userRating);
+    }
+}
