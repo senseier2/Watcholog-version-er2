@@ -1,3 +1,5 @@
+const { listenerCount } = require("mysql2/typings/mysql/lib/Connection");
+
 // globally scoped variables
 var modal = document.getElementById("welcomeModal");
 var helpModal = document.getElementById("helpModal");
@@ -221,4 +223,66 @@ function renderMovieNames(data, data2, data3, data4, data5, data6, data7, data8)
         infoDiv.appendChild(overviewData);
         infoDiv.appendChild(userRating);
     }
+
+
 }
+
+// Check that verifies if there is already a birthdate in local storage
+function checkLocalStorge() {
+    stored = localStorage.getItem("birthdate")
+    console.log(typeof stored)
+        if (stored !== null) {
+            console.log(localStorage.getItem("birthdate"))
+            let oldBirthday = JSON.parse(localStorage.getItem("birthdate"));
+
+            for (let i = 0; i < oldBirthday.length; i++) {
+                let firstSearch = document.createElement("li");
+                firstSearch.textContent = oldBirthday[i];
+                searchHistory.appendChild(firstSearch);
+            }
+            return oldBirthday
+        } else {
+            return []
+        }
+}
+
+var birthDate = checkLocalStorage();
+console.log(birthDate)
+
+// Function to grab User input
+var formSubmitHandler = function(event) {
+    event.preventDefault();
+
+    var birthdayDates = docuemnt.querySelector("#datepicker");
+
+    getOnThisDay(birthdayDates.value.split ("/",2));
+    let firstSearch = document.createElement("li");
+    firstSearch.textContent = birthdayDates.value.split ("/",2).join("/");
+    let nChildren = searchHistory.getElementsByTagName('*').length;
+    if (nChildren < 5) {
+        searchHistory.appendChild(firstSearch);
+        birthDate.push(birthdayDates.value.split("/"2).join("/"))
+    } else {
+        oldestElement = searchHistory.getElementsByTagName('*')[0]
+        oldestElement.remove()
+        searchHistory.appendChild(firstSearch);
+        birthDate.shift()
+        birthDate.push(birthdayDates.value.split("/",2).join("/"))
+    }
+
+    //Append to birthday list
+
+    //Append to Array
+
+    console.log(birthDate)
+    //Update Local Storage
+    localStorage.setItem("birthdate", JSON.stringify(birthDate));
+}
+
+// before appending to the list
+// check how many are in the list
+// if 5 or more
+// delete the oldest entry
+// then append new li
+// and add to birthday array
+
