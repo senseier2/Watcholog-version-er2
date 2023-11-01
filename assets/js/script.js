@@ -279,10 +279,47 @@ var formSubmitHandler = function(event) {
     localStorage.setItem("birthdate", JSON.stringify(birthDate));
 }
 
-// before appending to the list
-// check how many are in the list
-// if 5 or more
-// delete the oldest entry
-// then append new li
-// and add to birthday array
+/* before appending to the list
+ check how many are in the list
+ if 5 or more
+ delete the oldest entry
+ then append new li
+ and add to birthday array*/
+
+$( function() {
+    $( "#datepicker" ).datepicker({
+        changeMonth: true,
+        changeYear: false,
+        dateFormat: 'mm/dd',
+    });
+});
+
+var clearDiv = function(div) {
+    div.innerHTML = ""
+    return
+}
+
+function openNav(x) {
+    if (x.matches) {
+        document.querySelector(".sidebar").style.display = "flex";
+        document.querySelector(".sidebar").style.width = "100%";
+        document.querySelector("main").style.display = "none";
+    } else {
+        document.querySelector(".sidebar").style.display = "flex";
+        document.querySelector(".sidebar").style.width = "20rem";
+        document.querySelector("main").style.marginLeft = "20rem";
+    }
+}
+
+// Set the width of the sidebar to 0 and the left margin of the page content to 0 
+function closeNav() {
+    document.querySelector("main").style.display = "inline-block";
+    document.querySelector(".sidebar").style.display = "none";
+    document.querySelector("main").style.marginLeft = "0rem";
+}
+
+// actually calling function goes here + event listeners
+var userForm = document.querySelector("#user-form");
+
+userForm.addEventListener("submit", formSubmitHandler);
 
