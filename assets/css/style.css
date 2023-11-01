@@ -6,3 +6,74 @@
     --darkest-blue: #0E0E52;
 }
 
+.sidebar-left {
+    height: 100%; /* Full height: remove this if you want "auto" height */
+    width: 20rem; 
+    position: fixed;
+    z-index: 1;
+
+    background-color: var(--darkest-blue);
+    padding-top: 20px;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    color: var(--lightest-blue);
+}
+
+.sidebar-left h1 {
+    color: var(--lightest-blue);
+    font-family: "Monoton";
+}
+
+.sidebar {
+    font-family: "Comfortaa";
+}
+
+ul {
+    list-style: none;
+}
+
+#submit {
+    width: 100%;
+}
+
+#search-history {
+    text-align: center;
+}
+
+li:hover {
+    color: white;
+    transition: 1s;
+}
+
+.secondary-button {
+    width: 65%;
+}
+
+main {
+    margin-left: 20rem;
+    padding: 0rem 1rem;
+    height: 80%;
+    background-color: var(--lightest-blue);
+    background-image: linear-gradient(to bottom, rgba(255,255,255,255), rgba(0,0,0,0));
+    font-family: "Comfortaa";
+}
+
+main header {
+    margin: 1 rem;
+    padding: 3 rem;
+    text-align: center;
+    font-size: large;
+}
+
+.secondary-button {
+    background-color: var(--mid-blue);
+    border: none;
+}
+
+.upperCard {
+    border: solid 1px var(--darkest-blue);
+}
+
+
+
