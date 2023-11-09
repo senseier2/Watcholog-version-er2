@@ -75,5 +75,76 @@ main header {
     border: solid 1px var(--darkest-blue);
 }
 
+.card-header {
+    display: block;
+    font-family: "Comfortaa";
+}
 
+.card-body {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.lowerCard {
+    border: solid 1px var(--darkest-blue);
+}
+
+.modal-head {
+    background-color: var(--dark-blue);
+    color: white;
+    font-weight: bold;
+}
+
+.modal-body {
+    background: var(--lightest-blue);
+    font-size: 1.3rem;
+}
+
+.modal-footer {
+    background-color: var(--dark-blue);
+}
+
+.modal-buttonStyle {
+    background-color: var(--mid-blue);
+    border-color: var(--mid-blue);
+    box-shadow: 0 2px 4px black;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* .movieDiv {
+    display: flex;
+} */
+
+.ui-widget-content {
+    background-color: aliceblue;
+}
+
+.ui-datepicker-year {
+    display: none;
+}
+
+@media screen and (max-width: 1400px) {
+    .card-body {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 50px;
+        position: relative;
+    }
+
+    .card-header {
+        justify-content: center;
+        display: flex;
+        text-align: center;
+    }
+
+    @keyframes flexanimation {
+        100% {
+            flex-wrap: wrap;
+        }
+    }
+}
 
