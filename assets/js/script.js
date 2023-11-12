@@ -261,7 +261,7 @@ var formSubmitHandler = function(event) {
     let nChildren = searchHistory.getElementsByTagName('*').length;
     if (nChildren < 5) {
         searchHistory.appendChild(firstSearch);
-        birthDate.push(birthdayDates.value.split("/"2).join("/"))
+        birthDate.push(birthdayDates.value.split("/",2).join("/"))
     } else {
         oldestElement = searchHistory.getElementsByTagName('*')[0]
         oldestElement.remove()

@@ -113,9 +113,9 @@ main header {
     font-size: 1rem;
 }
 
-/* .movieDiv {
+.movieDiv {
     display: flex;
-} */
+}
 
 .ui-widget-content {
     background-color: aliceblue;
