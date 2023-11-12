@@ -1,5 +1,3 @@
-const { listenerCount } = require("mysql2/typings/mysql/lib/Connection");
-
 // globally scoped variables
 var modal = document.getElementById("welcomeModal");
 var helpModal = document.getElementById("helpModal");
@@ -228,7 +226,7 @@ function renderMovieNames(data, data2, data3, data4, data5, data6, data7, data8)
 }
 
 // Check that verifies if there is already a birthdate in local storage
-function checkLocalStorge() {
+function checkLocalStorage() {
     stored = localStorage.getItem("birthdate")
     console.log(typeof stored)
         if (stored !== null) {
