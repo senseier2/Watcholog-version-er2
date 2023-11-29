@@ -251,7 +251,7 @@ console.log(birthDate)
 var formSubmitHandler = function(event) {
     event.preventDefault();
 
-    var birthdayDates = docuemnt.querySelector("#datepicker");
+    var birthdayDates = document.querySelector("#datepicker");
 
     getOnThisDay(birthdayDates.value.split ("/",2));
     let firstSearch = document.createElement("li");
