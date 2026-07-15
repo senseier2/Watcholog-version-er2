@@ -25,6 +25,7 @@
     color: var(--lightest-blue);
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
+    padding-bottom: 20px;
 }
 
 .sidebar {
@@ -37,6 +38,14 @@ ul {
 
 #submit {
     width: 100%;
+    color:#0E0E52
+    background-color:#def0f7;
+}
+
+#submit:hover{
+    background-color:#def0f7;
+    color:#0E0E52;
+    border-color:#0E0E52;
 }
 
 #search-history {
