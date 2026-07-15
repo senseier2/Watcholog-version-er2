@@ -22,7 +22,8 @@
 
 .sidebar-left h1 {
     color: var(--lightest-blue);
-    font-family: "Monoton";
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .sidebar {
