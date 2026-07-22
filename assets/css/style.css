@@ -45,11 +45,26 @@ ul {
 #submit:hover{
     background-color:#def0f7;
     color:#0E0E52;
-    border-color:#0E0E52;
+    border: solid 2px;
+    border-color:#ffffff;
 }
 
 #search-history {
+    margin-bottom: 10px;
     text-align: center;
+    list-style: none;
+}
+
+#search-history li{
+    border: solid 1px #def0f7;
+    color:#def0f7;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+#search-history li:hover{
+    background-color:#def0f7;
+    color:#0E0E52;
 }
 
 li:hover {
